@@ -1,0 +1,271 @@
+
+body,
+html {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0,0,0,.6);
+}
+
+/*Main Collage*/
+.main-collage svg {
+  height: 100vh;
+  background-color : rgba(0, 0, 0, .6);
+}
+
+.main-collage a:hover image,
+.active-block image {
+  filter: none !important;
+}
+
+.main-collage image {
+  filter: url(#sketchFilter);
+}
+
+/*Main Animation*/
+.main-animation {
+  position: relative;
+}
+
+.logo-svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+  width: 30%;
+  min-width: 300px;
+  background-color: transparent;
+  animation-name: svg-background;
+  animation-delay: 1.7s;
+  animation-duration: .5s;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  z-index: 100;
+}
+
+@keyframes svg-background {
+  0% {
+    background-color: transparent;
+  }
+  
+  100% {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+.letters-outline path{
+  stroke: #434242;
+  stroke-width: 4px;
+  stroke-dashoffest: -1500;
+  stroke-dasharray: 1500;
+  animation-name: letters-outline;
+  animation-duration: 2s;
+  animation-direction: alternate;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  fill: transparent;
+}
+
+@keyframes letters-outline {
+  0% {
+    stroke-dashoffset: -1500;
+  }
+
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.letters path{
+  /*stroke: #E31E24;*/
+  stroke: #d66666;
+  stroke-width: rpx;
+  stroke-dashoffest: -2000;
+  stroke-dasharray: 2000;
+  animation-name: letters;
+  animation-duration: 2s;
+  animation-direction: reverse;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  fill: transparent;
+}
+
+@keyframes letters {
+  0% {
+    stroke-dashoffset: 0;
+    /*fill: #E31E24;*/
+    fill: #d66666;
+  }
+
+  30% {
+    fill: transparent;
+  }
+
+  100% {
+    stroke-dashoffset: 2000;
+    fill: transparent;
+  }
+}
+
+.design path {
+  opacity: 0;
+  transform: translateY(10%);
+  animation-name: design;
+  animation-delay: 1.7s;
+  animation-duration: .5s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes design {
+  0% {
+    opacity: 0;
+    transform: translateY(10%);
+  }
+
+
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+
+/*New Styles*/
+.logo-svg {
+  padding: 50px 0px;
+}
+
+.main-logo-top-link {
+  text-align: left;
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: #434242;
+  font-size: 34px;
+  top: 15vh;
+  left: 5%;
+  /*width: 30%;
+  min-width: 300px;
+  background-color: rgba(255,255,255, .3);*/
+}
+
+.main-logo-bottom-link {
+  text-align: right;
+  position: absolute;
+  bottom: : 0;
+  right: 0;
+  color: #434242;
+  font-size: 34px;
+  bottom: 15vh;
+  right: 5%;
+}
+
+.main-logo-top-link a,
+.main-logo-bottom-link a {
+  font-size: 21px;
+  background-color: rgba(0, 0, 0, .6);
+  padding: 10px 20px;
+}
+
+.read-more {
+  position: relative;
+  font-family: "Circe-Regular";
+  color: #fff;
+  background: transparent;
+  border-width: 2px;
+  border-style: solid;
+  border-color: #d66666;
+  display: inline-block;
+  padding: 5px 10px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  text-align: center;
+  font-weight: bold;
+  font-size: 21px;
+  margin: 10px 20px; 
+}
+.read-more:before, 
+.read-more:after {
+  content: "";
+  display: block;
+  position: absolute;
+  border-color: #d66666;
+  box-sizing: border-box;
+  border-style: solid;
+  width: 1em;
+  height: 1em;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; 
+}
+.read-more:before {
+  top: -6px;
+  left: -6px;
+  border-width: 2px 0 0 2px;
+  z-index: 5; 
+}
+.read-more:after {
+  bottom: -6px;
+  right: -6px;
+  border-width: 0 2px 2px 0; 
+}
+.read-more:hover {
+  background-color: #fff;
+  border-color: #fff;
+  color: #454545; 
+}
+.read-more:hover:before, 
+.read-more:hover:after {
+  width: calc(100% + 12px);
+  height: calc(100% + 12px);
+  border-color: #fff;
+  color: #454545; 
+}
+
+.left-link {
+  opacity: 0;
+  left: 0%;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes letters-left {
+  0% {
+    opacity: 0;
+    left: 0%
+  }
+
+  100% {
+    opacity: 1;
+    left: 5%
+  }
+}
+
+.left-link.active {
+  animation-name: letters-left;
+}
+
+.right-link {
+  opacity: 0;
+  right: 0%;
+  animation-duration: 1s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+.right-link.active {
+   animation-name: letters-right;
+}
+@keyframes letters-right {
+  0% {
+    opacity: 0;
+    right: 0%
+  }
+
+  100% {
+    opacity: 1;
+    right: 5%
+  }
+}
